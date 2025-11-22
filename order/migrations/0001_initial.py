@@ -10,8 +10,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("product", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ("product", "0001_initial"),
     ]
 
     operations = [
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("product", models.ManyToManyField(to="product.product")),
+                ("product", models.ManyToManyField(to="product.Product")),
                 (
                     "user",
                     models.ForeignKey(
