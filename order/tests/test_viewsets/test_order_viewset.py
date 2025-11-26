@@ -1,6 +1,7 @@
 import json
 from django.urls import reverse
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 from rest_framework.test import APITestCase, APIClient
 
 
@@ -14,6 +15,10 @@ class TestOrderViewSet(APITestCase):
     client = APIClient()
 
     def setUp(self):
+        self.user = UserFactory()
+        token = Token.objects.create(user=self.user)  # added
+        token.save()  # added
+
         self.category = CategoryFactory(title='technology')
         self.product = ProductFactory(title='mouse', price=100, category=[self.category])
         self.order = OrderFactory(product=[self.product])
