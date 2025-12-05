@@ -1,8 +1,8 @@
-version: "3.9"
+#version: "3.9"
 
 services:
   db:
-    image: postgres:13.0-alpine
+    image: postgres:14-alpine
     ports:
       - 5432:5432
     volumes:
@@ -11,6 +11,7 @@ services:
       - POSTGRES_USER=bookstore_dev
       - POSTGRES_PASSWORD=bookstore_dev
       - POSTGRES_DB=bookstore_dev_db
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1
     networks:
       - backend
 

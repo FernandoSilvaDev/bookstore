@@ -54,6 +54,8 @@ COPY poetry.lock pyproject.toml ./
 # quicker install as runtime deps are already installed
 RUN  poetry install --no-root
 
+RUN apt-get update && apt-get install -y git
+
 WORKDIR /app
 
 COPY . /app/
