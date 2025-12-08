@@ -28,9 +28,14 @@ jobs:
       - name: View poetry --help
         run: poetry --help
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libpq-dev
+
       - name: Install dependencies
         shell: bash
-        run: python -m poetry install
+        run: poetry install
 
       - name: Test
         run: |
