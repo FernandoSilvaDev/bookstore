@@ -6,7 +6,7 @@ authors = [
     {name = "Fernando Silva",email = "artfernando.carlos@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10,<3.14"
 dependencies = [
     "pytest (>=9.0.1,<10.0.0)",
     "factory-boy (>=3.3.3,<4.0.0)",
