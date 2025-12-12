@@ -3,6 +3,17 @@
 import os
 import sys
 
+from git import Git
+
+# Caminho completo para o executável do Git
+git_path = "C:\\Program Files\\Git\\bin\\git.exe"
+
+# Define a variável de ambiente para o GitPython
+os.environ["GIT_PYTHON_GIT_EXECUTABLE"] = git_path
+
+# Atualiza o GitPython com o caminho correto
+Git.refresh(path=git_path)
+
 
 def main():
     """Run administrative tasks."""
