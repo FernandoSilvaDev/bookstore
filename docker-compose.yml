@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   db:
-    image: postgres:13.0-alpine
+    image: postgres:14
     ports:
       - 5432:5432
     volumes:
@@ -11,6 +11,7 @@ services:
       - POSTGRES_USER=bookstore_dev
       - POSTGRES_PASSWORD=bookstore_dev
       - POSTGRES_DB=bookstore_dev_db
+      - GIT_PYTHON_GIT_EXECUTABLE=/usr/bin/git
   web:
       build:
         context: .

@@ -36,6 +36,7 @@ RUN apt-get update \
     curl \
     # deps for building python deps
     build-essential
+RUN apt-get update && apt-get install --no-install-recommends -y git
 
 # install poetry - respects $POETRY_VERSION & $POETRY_HOME
 RUN curl -sSL https://install.python-poetry.org | python3 -
